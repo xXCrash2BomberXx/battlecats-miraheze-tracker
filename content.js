@@ -318,6 +318,7 @@ const owned = new Set([
 	220, // ALLEN O'NEIL
 	219, // SV-001
 	293, // Kyubey
+	794, // Ogre Cat
 	/**
 	 * https://battlecats.miraheze.org/wiki/Category:Uber_Rare_Cats
 	 */
@@ -365,6 +366,7 @@ const owned = new Set([
 	634, // White Knight Cyclops
 	698, // Thunder Jack
 	// The Almighties The Majestic Zeus
+	257, // Thunder God Zeus
 	259, // Radiant Aphrodite
 	271, // Shining Amaterasu
 	272, // Splendid Ganesha
@@ -372,6 +374,7 @@ const owned = new Set([
 	439, // Empress Chronos
 	534, // Hades the Punisher
 	642, // Lucifer the Fallen
+	723, // Lightmother Aset
 	// Frontline Assault Iron Legion
 	304, // Mighty Kat-A-Pult
 	355, // Mighty Rekon Korps
@@ -409,6 +412,12 @@ const owned = new Set([
 	// River City Clash Capsules
 	624, // Kunio-kun
 	721, // High School Kingpin Riki
+	// Baki Hanma
+	789, // Baki Hanma
+	790, // Retsu Kaioh
+	791, // Kaoru Hanayama
+	792, // Katsumi Orochi
+	793, // Jack Hammer
 	// Halloween Capsules
 	229, // Hallowindy
 	230, // Spooky Thundia
