@@ -467,7 +467,8 @@ const owned = new Set([
  */
 async function getCat(catID) {
 	const resp = JSON.parse((await (
-		await fetch(`https://battlecats.miraheze.org/w/api.php?action=query&format=json&prop=revisions&titles=MediaWiki%3ACustom-AnimationViewer%2F${String(catID).padStart(3, "0")}.json&rvprop=content&rvslots=main&formatversion=2`)
+		await fetch(`https://battlecats.miraheze.org/w/api.php?action=query&format=json&prop=revisions&titles=MediaWiki%3ACustom-AnimationViewer%2F${String(catID).padStart(3, "0")
+			}.json&rvprop=content&rvslots=main&formatversion=2`)
 	).json()).query.pages[0].revisions[0].slots.main.content);
 	return [
 		...(resp.f ? [resp.f.name] : []),
@@ -480,8 +481,22 @@ async function getCat(catID) {
 if (window.location.href.startsWith("https://battlecats.miraheze.org/wiki/Category"))
 	document.querySelectorAll(".gacha-banner").forEach(banner => {
 		/** @type {HTMLDivElement} */
-		const collapsible = banner.querySelector("div > i > b");/** @type {NodeListOf<HTMLDivElement} */
-		(banner.querySelectorAll(".collapsible-units")).forEach((stage, index) => {const units = Array.from(stage.querySelectorAll("img")).map(unit => {	const catNum = parseInt(unit.src.match(/Uni(\d{3})/)[1]);	const catRank = ranks.indexOf(catNum) + 1;	const isOwned = owned.has(catNum);	unit.style.backgroundColor = isOwned ? "green" : "red";	unit.alt += ` (${isOwned ? "O" : "U"} ${tiers[Object.keys(tiers).find(x => catRank <= x)]} ${catRank})`;	unit.parentElement.title = unit.alt;	return isOwned;});if (!index)	collapsible.innerText = `${units.reduce((accumulator, currentValue) => accumulator + currentValue, 0)		}/${units.length}\t${collapsible.innerText}`
+		const collapsible = banner.querySelector("div > i > b");
+
+		/** @type {NodeListOf<HTMLDivElement} */
+		(banner.querySelectorAll(".collapsible-units")).forEach((stage, index) => {
+			const units = Array.from(stage.querySelectorAll("img")).map(unit => {
+				const catNum = parseInt(unit.src.match(/Uni(\d{3})/)[1]);
+				const catRank = ranks.indexOf(catNum) + 1;
+				const isOwned = owned.has(catNum);
+				unit.style.backgroundColor = isOwned ? "green" : "red";
+				unit.alt += ` (${isOwned ? "O" : "U"} ${tiers[Object.keys(tiers).find(x => catRank <= x)]} ${catRank})`;
+				unit.parentElement.title = unit.alt;
+				return isOwned;
+			});
+			if (!index)
+				collapsible.innerText = `${units.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+					}/${units.length}\t${collapsible.innerText}`
 		});
 	});
 else if (
