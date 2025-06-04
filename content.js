@@ -1,19 +1,19 @@
 // https://tiermaker.com/categories/battle-cats/the-battle-cats-uber-tierlist1331-16764237
 // Array.from(document.querySelectorAll("#tier-container .character"), x=>parseInt(x.style.backgroundImage.match(/uni\d+/)?.[0].slice(3))).filter(x => x);
-const ranks = [543, 44, 690, 705, 731, 71, 318, 441, 439, 529, 271, 519, 75, 686, 259, 333, 283, 226, 738, 304, 657, 316, 105, 396, 417, 159, 194, 170, 378, 258, 335, 59, 642, 632, 336, 380, 272, 125, 269, 533, 137, 451, 698, 177, 544, 641, 196, 42, 569, 559, 138, 478, 212, 401, 334, 585, 286, 534, 449, 355, 136, 76, 709, 57, 397, 362, 463, 624, 158, 493, 481, 322, 758, 594, 617, 609, 660, 195, 414, 647, 649, 631, 455, 171, 87, 73, 261, 305, 448, 760, 360, 84, 168, 107, 525, 351, 496, 749, 240, 134, 607, 43, 450, 723, 779, 359, 143, 83, 733, 725, 484, 502, 436, 633, 674, 124, 612, 413, 338, 358, 505, 361, 435, 754, 655, 85, 549, 634, 169, 668, 203, 306, 547, 719, 86, 586, 427, 461, 774, 34, 174, 546, 618, 357, 187, 746, 763, 412, 257, 291, 551, 683, 721, 715, 354, 625, 777, 515, 487, 587, 570, 270, 274, 769, 714, 737, 506, 275, 710, 456, 693, 229, 666, 241, 223, 661, 331, 341, 345, 230, 563, 466, 180, 135, 759, 302, 106, 588, 510, 772, 438, 330, 242, 536, 243, 600, 680, 596, 582, 687, 188, 550, 748, 310, 644, 494, 482, 575, 747, 583, 736, 595, 574, 681, 560, 564, 548, 185, 614, 590, 584, 768, 711, 514, 368, 620, 756, 468, 290, 346, 530, 512, 186, 597, 722, 727, 572, 485, 471, 573, 467, 648, 741, 599, 488, 699, 535, 225, 224, 292, 469, 364, 470, 365, 513, 394, 161, 119, 517, 363, 337, 511, 366, 526, 415, 288, 222, 671, 367, 692, 555, 66, 571, 326, 598, 537, 395, 516, 393, 416, 289, 72, 778, 712, 783, 619, 440, 762, 431, 682, 791, 787, 789, 781, 786, 792, 793, 790];
+const ranks = [543, 690, 44, 705, 71, 731, 318, 441, 439, 519, 529, 271, 75, 686, 259, 333, 226, 105, 170, 738, 283, 304, 159, 316, 417, 657, 59, 272, 396, 194, 378, 258, 632, 335, 336, 642, 380, 698, 533, 177, 269, 125, 451, 641, 196, 544, 42, 569, 138, 559, 478, 212, 585, 401, 449, 534, 286, 158, 355, 594, 463, 362, 660, 136, 493, 624, 397, 709, 758, 481, 195, 649, 322, 609, 455, 414, 305, 631, 448, 647, 261, 168, 73, 779, 107, 607, 760, 749, 359, 84, 351, 240, 360, 496, 450, 143, 725, 502, 733, 413, 83, 484, 633, 338, 124, 668, 674, 358, 618, 612, 85, 754, 435, 361, 655, 586, 549, 774, 634, 547, 427, 763, 174, 719, 34, 291, 461, 187, 746, 412, 357, 135, 515, 683, 551, 625, 721, 715, 354, 106, 587, 777, 506, 737, 769, 274, 714, 570, 331, 270, 487, 466, 710, 563, 456, 275, 341, 661, 223, 241, 693, 666, 345, 230, 229, 510, 759, 620, 302, 644, 330, 536, 772, 588, 438, 582, 180, 482, 680, 242, 748, 687, 243, 600, 596, 583, 550, 692, 590, 494, 681, 575, 188, 747, 736, 595, 574, 310, 584, 290, 560, 699, 564, 512, 548, 614, 514, 711, 572, 368, 185, 346, 768, 756, 530, 597, 468, 186, 471, 573, 292, 648, 485, 727, 467, 469, 488, 288, 722, 741, 72, 599, 526, 225, 224, 619, 394, 119, 535, 364, 517, 513, 470, 363, 511, 366, 365, 161, 337, 415, 712, 222, 66, 555, 326, 671, 537, 367, 571, 598, 431, 395, 783, 516, 416, 393, 778, 289, 440, 791, 787, 682, 762, 781, 137, 786, 43, 789, 76, 792, 617, 171, 334, 169, 793, 790, 306, 525, 87, 436, 57, 803, 505, 134, 546, 723, 806, 203, 257, 86, 804, 805, 799];
 // let x = 0; Array.from(document.querySelectorAll("#tier-container .tier-row")).reduce((acc, y) => { x += y.querySelectorAll(".character").length; acc[x] = y.querySelector(".label").innerText; return acc; }, {});
 /** @type {Map<number, string>} */
 const tiers = {
-	7: "SSS",
-	12: "SS",
-	19: "S",
-	46: "S-",
-	72: "A+",
-	107: "A",
-	150: "B+",
-	193: "B",
-	281: "C",
-	304: "D"
+	7: "S+",
+	13: "S",
+	17: "S-",
+	45: "A+",
+	70: "A",
+	94: "B+",
+	131: "B",
+	173: "C",
+	271: "D",
+	306: "F"
 };
 
 const owned = new Set([
@@ -467,8 +467,7 @@ const owned = new Set([
  */
 async function getCat(catID) {
 	const resp = JSON.parse((await (
-		await fetch(`https://battlecats.miraheze.org/w/api.php?action=query&format=json&prop=revisions&titles=MediaWiki%3ACustom-AnimationViewer%2F${String(catID).padStart(3, "0")
-			}.json&rvprop=content&rvslots=main&formatversion=2`)
+		await fetch(`https://battlecats.miraheze.org/w/api.php?action=query&format=json&prop=revisions&titles=MediaWiki%3ACustom-AnimationViewer%2F${String(catID).padStart(3, "0")}.json&rvprop=content&rvslots=main&formatversion=2`)
 	).json()).query.pages[0].revisions[0].slots.main.content);
 	return [
 		...(resp.f ? [resp.f.name] : []),
@@ -481,22 +480,8 @@ async function getCat(catID) {
 if (window.location.href.startsWith("https://battlecats.miraheze.org/wiki/Category"))
 	document.querySelectorAll(".gacha-banner").forEach(banner => {
 		/** @type {HTMLDivElement} */
-		const collapsible = banner.querySelector("div > i > b");
-
-		/** @type {NodeListOf<HTMLDivElement} */
-		(banner.querySelectorAll(".collapsible-units")).forEach((stage, index) => {
-			const units = Array.from(stage.querySelectorAll("img")).map(unit => {
-				const catNum = parseInt(unit.src.match(/Uni(\d{3})/)[1]);
-				const catRank = ranks.indexOf(catNum) + 1;
-				const isOwned = owned.has(catNum);
-				unit.style.backgroundColor = isOwned ? "green" : "red";
-				unit.alt += ` (${isOwned ? "O" : "U"} ${tiers[Object.keys(tiers).find(x => catRank <= x)]} ${catRank})`;
-				unit.parentElement.title = unit.alt;
-				return isOwned;
-			});
-			if (!index)
-				collapsible.innerText = `${units.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-					}/${units.length}\t${collapsible.innerText}`
+		const collapsible = banner.querySelector("div > i > b");/** @type {NodeListOf<HTMLDivElement} */
+		(banner.querySelectorAll(".collapsible-units")).forEach((stage, index) => {const units = Array.from(stage.querySelectorAll("img")).map(unit => {	const catNum = parseInt(unit.src.match(/Uni(\d{3})/)[1]);	const catRank = ranks.indexOf(catNum) + 1;	const isOwned = owned.has(catNum);	unit.style.backgroundColor = isOwned ? "green" : "red";	unit.alt += ` (${isOwned ? "O" : "U"} ${tiers[Object.keys(tiers).find(x => catRank <= x)]} ${catRank})`;	unit.parentElement.title = unit.alt;	return isOwned;});if (!index)	collapsible.innerText = `${units.reduce((accumulator, currentValue) => accumulator + currentValue, 0)		}/${units.length}\t${collapsible.innerText}`
 		});
 	});
 else if (
