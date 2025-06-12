@@ -208,7 +208,7 @@ const owned = new Set([
 	553, // Bakery Cat
 	581, // Stone Cat
 	623, // Pied Piper Cat
-	// 630, // Calligraphy Cat
+	630, // Calligraphy Cat
 	// 708, // Jetpack Cat
 	// 718, // Maize Cat
 	// 780, // Bowler Cat
