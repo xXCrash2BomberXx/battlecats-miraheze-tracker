@@ -210,7 +210,7 @@ const owned = new Set([
 	623, // Pied Piper Cat
 	630, // Calligraphy Cat
 	// 708, // Jetpack Cat
-	// 718, // Maize Cat
+	718, // Maize Cat
 	// 780, // Bowler Cat
 	// Ancient Eggs
 	658, // Ancient Egg: N101 / Courier Cat
