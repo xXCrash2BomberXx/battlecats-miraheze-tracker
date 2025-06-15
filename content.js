@@ -506,7 +506,7 @@ if (window.location.href.startsWith("https://battlecats.miraheze.org/wiki/Catego
 					}/${units.length}\t${collapsible.innerText}`
 		});
 	});
-else if (window.location.href === "https://battlecats.miraheze.org/wiki/Cat_Guide/Units") {
+else if (window.location.href === "https://battlecats.miraheze.org/wiki/Cat_Guide/Units")
 	fetch('https://battlecats.miraheze.org/wiki/Module:Cats/images.csv?action=raw').then(r => r.text()).then(data => {
 		const eggs = Object.fromEntries(data.trim().split('\n').slice(1).map(x => [x.slice(8).split("(")[0].trim(), parseInt(x.slice(0, 3))]));		
 		document.querySelectorAll(".nyanko img").forEach(unit =>
@@ -515,7 +515,7 @@ else if (window.location.href === "https://battlecats.miraheze.org/wiki/Cat_Guid
 			) ? "green" : "red"
 		);
 	});
-} else if (
+else if (
 	["(Normal_Cat)", "(Special_Cat)", "(Rare_Cat)", "(Super_Rare_Cat)", "(Uber_Rare_Cat)", "(Legend_Rare_Cat)"]
 		.map(x => window.location.href.endsWith(x)).some(x => x)
 ) {
