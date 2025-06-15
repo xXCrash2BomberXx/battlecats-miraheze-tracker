@@ -222,7 +222,8 @@ const owned = new Set([
 	697, // Ancient Egg: N107 / Cat Chief
 	707, // Ancient Egg: N109 / Barrel Cat
 	717, // Ancient Egg: N110 / Farmboy Cat
-	724, // Ancient Egg: N112 / Cat Egg Pod
+	// 716, // Ancient Egg: N111 / Cop Cat
+	// 724, // Ancient Egg: N112 / Cat Egg Pod
 	// Collaboration Event Cats
 	110, // Celesse
 	111, // Nono
