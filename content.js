@@ -58,6 +58,7 @@ const owned = new Set([
 	268, // Red Riding Mina
 	323, // Miyamoku Musashi
 	426, // Mecha-Bun
+	464, // Dogumaru
 	352, // Hermit Cat
 	383, // Masked Yulala
 	554, // Master Uril
@@ -107,11 +108,12 @@ const owned = new Set([
 	// 558, // Gacha Cat
 	735, // Principal Cat
 	610, // Gold Brick Cat
+	635, // Million-Dollar Cat
 	740, // Trash Cat
 	766, // Sardine
 	767, // Squid
 	// Collaboration Event Cats
-	130, // Cabaret Cat
+	103, // Cabaret Cat
 	120, // Healer
 	121, // Merc
 	191, // Titi
@@ -232,6 +234,7 @@ const owned = new Set([
 	114, // Yoichi
 	115, // Serum
 	116, // Fuu
+	183, // Cat Kart R
 	214, // HYAKUTARO
 	215, // MARCO
 	216, // TARMA
@@ -285,6 +288,7 @@ const owned = new Set([
 	228, // Gloomy Neneko
 	589, // Valentine's Neneko
 	566, // Lifeguard Cats
+	773, // Mummy Sumo
 	// Brainwashed Cats
 	636, // Brainwashed Tank Cat
 	662, // Brainwashed Cow Cat
@@ -344,6 +348,7 @@ const owned = new Set([
 	618, // Shiro Amakusa
 	649, // Hattori Hanzo
 	// Cyber Academy Galaxy Gals
+	75, // Windy
 	105, // Kuu
 	106, // Kai
 	619, // Lilin
@@ -384,6 +389,7 @@ const owned = new Set([
 	// Nature's Guardians Elemental Pixies
 	359, // Bora
 	401, // Voli
+	631, // Yamii
 	655, // Bliza
 	719, // Tekachi
 	// Merc Storia
@@ -500,6 +506,10 @@ if (window.location.href.startsWith("https://battlecats.miraheze.org/wiki/Catego
 					}/${units.length}\t${collapsible.innerText}`
 		});
 	});
+else if (window.location.href === "https://battlecats.miraheze.org/wiki/Cat_Guide/Units")
+	document.querySelectorAll(".nyanko img").forEach(unit =>
+		unit.style.backgroundColor = owned.has(parseInt(unit.src.match(/Uni(\d{3})/)[1])) ? "green" : "red"
+	);
 else if (
 	["(Normal_Cat)", "(Special_Cat)", "(Rare_Cat)", "(Super_Rare_Cat)", "(Uber_Rare_Cat)", "(Legend_Rare_Cat)"]
 		.map(x => window.location.href.endsWith(x)).some(x => x)
