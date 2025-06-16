@@ -148,10 +148,10 @@
 				document.querySelectorAll(".nyanko img").forEach(unit => {
 					let catNum;
 					const srcMatch = unit.src.match(/Uni(\d{3})/);
-					if (srcMatch) {
-						catNum = parseInt(srcMatch[1], 10);
-					} else if (unit.src.endsWith("_m00.png")) {
+					if (unit.src === "https://static.wikitide.net/battlecatswiki/7/70/Uni000_m00.png") {
 						catNum = eggs[unit.alt];
+					} else if (srcMatch) {
+						catNum = parseInt(srcMatch[1], 10);
 					}
 
 					if (catNum === undefined || isNaN(catNum)) return;
