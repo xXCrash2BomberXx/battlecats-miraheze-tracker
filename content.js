@@ -8,7 +8,7 @@
 	/** @type {Map<number, string>} */
 	const tiers = {
 		"7": "SS", "11": "S+", "18": "S", "41": "A+", "67": "A", "90": "B+", "127": "B", "169": "C", "268": "D", "310": "F"
-    };
+	};
 
 	// --- Start of Storage Logic ---
 	const ownedStorageKey = "battleCatsOwned";
